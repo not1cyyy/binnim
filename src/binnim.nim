@@ -57,7 +57,7 @@ proc binnim(filenames: seq[string], width: int = 20, quotes: bool = true, format
                 of "nim":
                     stdout.write " ]"
 
-    except:
+    except CatchableError:
         stderr.write_line("[ERROR] " & get_current_exception_msg() & "\n")
 
 when is_main_module:
